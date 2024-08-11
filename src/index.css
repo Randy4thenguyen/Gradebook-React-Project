@@ -1,0 +1,50 @@
+h1{
+    font-size: 4em;
+}
+.Gradebook{
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display:flex;
+}
+
+.Groups{
+    margin-left: auto;
+    margin-top: 10px;
+    display:inline-grid;
+    border: 1.2px solid black;
+    padding: 10px;
+    grid-template-columns: auto auto;
+}
+.Groups p{
+    margin: 5px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-weight: bolder;
+}
+.Groups input{
+    padding:3px;
+    margin: 5px;
+    border-radius: 2px;
+    border:0.2px solid black;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.Groups button{
+    font-size: 0.75rem;
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: rgb(211, 211, 211);
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.Groups h3{
+    font-size: 1rem; 
+}
+ul{
+    list-style: none;
+    padding-inline-start: 0;
+    font-size: 100%;
+
+}
