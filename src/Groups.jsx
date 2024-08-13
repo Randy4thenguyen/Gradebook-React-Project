@@ -1,9 +1,12 @@
-import React, {useState, useEffect, useRef} from 'react'
+
+import React, {useState, useRef, useContext} from 'react';
+import {groupContext} from "./App.jsx";
 function Groups(){
-    const [groups, setGroups] = useState([]);
-    const[groupName, setGN] = useState("");
+    
+    const [groupName, setGN] = useState("");
     const [groupWeight, setGW] = useState(0);
     const groupTotalWeight = useRef(0);    
+    const {groups, setGroups} = useContext(groupContext);
 
     function addGroup(){
         if(groupName.trim() != "" && (Number(groupTotalWeight.current) + Number(groupWeight)) < 101 && groupWeight >= 0){
