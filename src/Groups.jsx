@@ -9,15 +9,17 @@ function Groups(){
     const {groups, setGroups} = useContext(groupContext);
 
     function addGroup(){
-        if(groupName.trim() != "" && (Number(groupTotalWeight.current) + Number(groupWeight)) < 101 && groupWeight >= 0){
-            const newGroup = {name:groupName, weight:groupWeight};
+        if(groupName.trim() != "" && (Number(groupTotalWeight.current) + Number(groupWeight)) < 101 && groupWeight >= 0 && groups.findIndex(checkDupes) == -1){
+            const newGroup = {name:groupName, weight:groupWeight, assignments: []};
             groupTotalWeight.current = Number(groupTotalWeight.current) + Number(groupWeight);
-
-            console.log(groupName + " " + groupWeight + " " + groupTotalWeight.current);
             setGroups(oldArray => [...groups, newGroup] );
             setGN("");
             setGW(0);
         }
+    }
+
+    function checkDupes(value, index, array){
+        return value.name == groupName;
     }
     
     function groupNameInput(event){
@@ -29,10 +31,10 @@ function Groups(){
 
     return(
 
-        <div className = "Groups">
-            <p>Add Groups and Weights:</p>
+        <div className = "GroupsInput">
+            <h3>Add Groups and Weights:</h3>
             <input type = "text" placeholder = "Enter Group Name" value = {groupName} onChange={groupNameInput} maxLength="20"></input>
-            <input type = "number" placeholder = "Enter Weight of Group" value = {groupWeight} onChange={groupWeightInput} min = "0" max = {100 - groupTotalWeight.current}></input>
+            <input type = "number" value = {groupWeight} onChange={groupWeightInput} min = "0" max = {100 - groupTotalWeight.current}></input>
             <button onClick={() => addGroup()}>Add Group</button>
             <div>
                 <h3>Groups</h3>

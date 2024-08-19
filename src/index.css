@@ -1,26 +1,37 @@
-h1{
-    font-size: 4em;
+body{
+    font-family: 'Arial Narrow Bold', sans-serif;
 }
-.Gradebook{
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display:flex;
+h1{
+    font-size: 3em;
+    flex-grow: 1;
+    /* flex-basis: 50%; */
+    text-wrap: nowrap;
+    border:5px,black,solid;
 }
 
-.Groups{
-    margin-left: auto;
-    margin-top: 10px;
+
+.GradeAndInputs{
+    display:flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    border:5px,black,solid;
+}
+
+.GroupsInput{
     display:inline-grid;
     border: 1.2px solid black;
     padding: 10px;
+    margin: 10px;
     grid-template-columns: auto auto;
 }
-.Groups p{
+.GroupsInput h3{
     margin: 5px;
     grid-column-start: 1;
     grid-column-end: 3;
     font-weight: bolder;
+    
 }
-.Groups input{
+.GroupsInput input{
     padding:3px;
     margin: 5px;
     border-radius: 2px;
@@ -28,7 +39,7 @@ h1{
     grid-column-start: 1;
     grid-column-end: 3;
 }
-.Groups button{
+.GroupsInput button{
     font-size: 0.75rem;
     padding: 5px;
     border: 0.5px solid black;
@@ -39,12 +50,43 @@ h1{
     grid-column-end: 3;
 }
 
-.Groups h3{
-    font-size: 1rem; 
-}
-ul{
+
+.GroupsInput ul{
     list-style: none;
     padding-inline-start: 0;
     font-size: 100%;
+}
 
+.AssignmentsInput{
+    display:inline-grid;
+    border: 1.2px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.AssignmentsInput input{
+    padding:3px;
+    margin: 5px;
+    border-radius: 2px;
+    border:0.2px solid black;
+}
+
+.AssignmentsInput select{
+    padding:3px;
+    margin: 5px;
+    border-radius: 2px;
+    border:0.2px solid black;
+}
+
+.AssignmentsInput h3{
+    margin: 5px;
+    font-weight: bolder;
+}
+
+.AssignmentsInput button{
+    font-size: 0.75rem;
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: rgb(211, 211, 211);
 }
