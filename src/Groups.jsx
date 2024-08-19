@@ -10,7 +10,7 @@ function Groups(){
 
     function addGroup(){
         if(groupName.trim() != "" && (Number(groupTotalWeight.current) + Number(groupWeight)) < 101 && groupWeight >= 0 && groups.findIndex(checkDupes) == -1){
-            const newGroup = {name:groupName, weight:groupWeight, assignments: []};
+            const newGroup = {name:groupName, weight:groupWeight, assignments: [], points:0, maxPoints:0};
             groupTotalWeight.current = Number(groupTotalWeight.current) + Number(groupWeight);
             setGroups(oldArray => [...groups, newGroup] );
             setGN("");

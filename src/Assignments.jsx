@@ -27,14 +27,16 @@ function Assignments(){
         if(assignmentName.trim() != "" && assignmentMaxScore > -1){
             const newAssignment = {name:assignmentName, score: assignmentScore, max:assignmentMaxScore, group: assignmentGroup};
             let groupIndex = groups.findIndex(findGroup); 
-            console.log(groupIndex);
             groups[groupIndex].assignments.push(newAssignment);
-            //groups[groupIndex].assignments.push(newAssignment);
+            groups[groupIndex].points += assignmentScore;
+            groups[groupIndex].maxPoints += assignmentMaxScore;
             setAssignmentName("");
             setMaxScore(0);
             setScore(0);
             setAssignmentGroup("");
             console.log("AGG");
+
+
         }
     }
 
