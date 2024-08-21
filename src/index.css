@@ -3,35 +3,35 @@ body{
 }
 h1{
     font-size: 3em;
-    flex-grow: 1;
+    flex-grow: 1.5;
     /* flex-basis: 50%; */
     text-wrap: nowrap;
     border:5px,black,solid;
 }
-
+/* Try and put inputs in its own container */
 
 .GradeAndInputs{
     display:flex;
     flex-wrap: nowrap;
-    align-items: flex-start;
+    align-items: stretch;
     border:5px,black,solid;
 }
 
-.GroupsInput{
+.AddGroups{
     display:inline-grid;
     border: 1.2px solid black;
     padding: 10px;
     margin: 10px;
     grid-template-columns: auto auto;
 }
-.GroupsInput h3{
+.AddGroups p{
     margin: 5px;
     grid-column-start: 1;
     grid-column-end: 3;
     font-weight: bolder;
     
 }
-.GroupsInput input{
+.AddGroups input{
     padding:3px;
     margin: 5px;
     border-radius: 2px;
@@ -39,7 +39,7 @@ h1{
     grid-column-start: 1;
     grid-column-end: 3;
 }
-.GroupsInput button{
+.AddGroups button{
     font-size: 0.75rem;
     padding: 5px;
     border: 0.5px solid black;
@@ -48,45 +48,48 @@ h1{
     background-color: rgb(211, 211, 211);
     grid-column-start: 1;
     grid-column-end: 3;
+    cursor: pointer;
 }
 
 
-.GroupsInput ul{
+.AddGroups ul{
     list-style: none;
     padding-inline-start: 0;
     font-size: 100%;
+    cursor: pointer;
 }
 
-.AssignmentsInput{
+.AddAssignments{
     display:inline-grid;
     border: 1.2px solid black;
     padding: 10px;
     margin: 10px;
 }
-.AssignmentsInput input{
+.AddAssignments input{
     padding:3px;
     margin: 5px;
     border-radius: 2px;
     border:0.2px solid black;
 }
 
-.AssignmentsInput select{
+.AddAssignments select{
     padding:3px;
     margin: 5px;
     border-radius: 2px;
     border:0.2px solid black;
 }
 
-.AssignmentsInput h3{
+.AddAssignments p{
     margin: 5px;
     font-weight: bolder;
 }
 
-.AssignmentsInput button{
+.AddAssignments button{
     font-size: 0.75rem;
     padding: 5px;
     border: 0.5px solid black;
     border-radius: 10px;
     margin: 5px;
     background-color: rgb(211, 211, 211);
+    cursor: pointer;
 }

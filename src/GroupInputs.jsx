@@ -1,7 +1,7 @@
 
 import React, {useState, useRef, useContext} from 'react';
 import {groupContext} from "./App.jsx";
-function Groups(){
+function GroupsInputs(){
     
     const [groupName, setGN] = useState("");
     const [groupWeight, setGW] = useState(0);
@@ -29,27 +29,32 @@ function Groups(){
         setGW(event.target.value);
     }
 
+    function removeGroup(index){
+        setGroups(groups.filter((_,i) => i !== index));
+    }
+
     return(
 
-        <div className = "GroupsInput">
-            <h3>Add Groups and Weights:</h3>
-            <input type = "text" placeholder = "Enter Group Name" value = {groupName} onChange={groupNameInput} maxLength="20"></input>
+        <div className = "AddGroups">
+            <p>Add Group Name</p>
+            <input type = "text" placeholder = "Enter Name" value = {groupName} onChange={groupNameInput} maxLength="20"></input>
+            <p>Add Group Weight (%)</p>
             <input type = "number" value = {groupWeight} onChange={groupWeightInput} min = "0" max = {100 - groupTotalWeight.current}></input>
             <button onClick={() => addGroup()}>Add Group</button>
             <div>
-                <h3>Groups</h3>
+                <p>Groups</p>
                 <ul>
                     {groups.map((group,index) => 
-                    <li key = {index}> 
+                    <li key = {index} onClick = {() => removeGroup(index)}> 
                         {group.name}
                     </li>)}
                 </ul>
             </div>
             <div style={{marginLeft: "10px"}}>
-                <h3>Weight</h3>
+                <p>Weight</p>
                 <ul>
                     {groups.map((group,index) => 
-                    <li key = {index}> 
+                    <li key = {index} onClick = {() => removeGroup(index)}> 
                         {Number(group.weight)}%
                     </li>)}
                 </ul>
@@ -57,4 +62,4 @@ function Groups(){
         </div>
     );
 }
-export default Groups
+export default GroupsInputs
